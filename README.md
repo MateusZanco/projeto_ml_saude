@@ -1,3 +1,4 @@
+---
 title: Previsão de Risco de Saúde 
 emoji: 🩺 
 colorFrom: red 
@@ -5,9 +6,9 @@ colorTo: pink
 sdk: streamlit 
 python_version: 3.11 
 app_file: src/app.py
+---
 
 # Sistema de Previsão de Risco de Saúde
-
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
 ![Framework](https://img.shields.io/badge/Streamlit-1.38-red?style=for-the-badge&logo=streamlit)
