@@ -16,6 +16,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+# MLflow
+/mlruns/
 # Arquivos de configuração de IDEs/Editores
 .vscode/
 .idea/
