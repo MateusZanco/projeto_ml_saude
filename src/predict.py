@@ -20,35 +20,27 @@ encoded_columns = joblib.load(ENCODED_COLUMNS_PATH)
 def make_prediction(input_data):
     """
     Recebe os dados de um novo paciente, processa e retorna a predição.
-    
-    Args:
-        input_data (dict): Dicionário com os dados do paciente.
-        
-    Returns:
-        tuple: Uma tupla contendo (str: predição decodificada, dict: probabilidades por classe).
     """
-    # 1. Converter o dicionário de entrada para um DataFrame do pandas
+    # 1. Converter o dicionário de entrada para um DataFrame
     df = pd.DataFrame([input_data])
 
     # 2. Aplicar One-Hot Encoding
-    # Isso irá criar colunas para as categorias presentes nos dados de entrada
     df_encoded = pd.get_dummies(df, drop_first=True, dtype=int)
 
     # 3. Alinhar as colunas com as do modelo treinado
-    # Garante que o dataframe tenha exatamente as mesmas colunas que o modelo espera
     df_aligned = df_encoded.reindex(columns=encoded_columns, fill_value=0)
 
-    # 4. Normalizar os dados usando o scaler JÁ TREINADO
+    # 4. Normalizar os dados
     df_scaled = scaler.transform(df_aligned)
 
-    # 5. Fazer a predição de classe e de probabilidades
+    # 5. Fazer a predição
     prediction_encoded = model.predict(df_scaled)
     prediction_proba = model.predict_proba(df_scaled)
 
-    # 6. Decodificar a predição para o nome da classe original (ex: 'Alto')
+    # 6. Decodificar a predição
     prediction_decoded = label_encoder.inverse_transform(prediction_encoded)[0]
 
-    # 7. Formatar as probabilidades em um dicionário legível
-    probabilities = {label_encoder.classes_[i]: f"{proba:.2%}" for i, proba in enumerate(prediction_proba[0])}
+
+    probabilities = {label_encoder.classes_[i]: proba for i, proba in enumerate(prediction_proba[0])}
 
     return prediction_decoded, probabilities
