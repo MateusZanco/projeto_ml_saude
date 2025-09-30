@@ -11,11 +11,11 @@
 ---
 
 ###  Índice
-1. [Visão Geral](#-visão-geral-do-projeto)
-2. [Demonstração Online](#-demonstração-online)
-3. [Arquitetura da Solução](#-arquitetura-da-solução)
-4. [Metodologia e Tecnologias](#-metodologia-e-tecnologias)
-5. [Como Executar Localmente](#-como-executar-localmente)
+1. [Visão Geral](#visão-geral-do-projeto)
+2. [Demonstração Online](#demonstração-online)
+3. [Arquitetura da Solução](#arquitetura-da-solução)
+4. [Metodologia e Tecnologias](#metodologia-e-tecnologias)
+5. [Como Executar Localmente](#como-executar-localmente)
 
 ---
 
@@ -31,6 +31,7 @@ A aplicação está disponível publicamente no Hugging Face Spaces. Acesse e in
 ## Arquitetura da Solução
 O projeto foi estruturado de forma modular para garantir a organização, manutenibilidade e reprodutibilidade do código.
 
+```bash
 projeto_ml_saude/
 │
 ├── artifacts/              # Modelos, scalers e encoders salvos
@@ -47,11 +48,11 @@ projeto_ml_saude/
 ├── .gitignore              # Arquivos e pastas a serem ignorados pelo Git
 ├── requirements.txt        # Lista de dependências do projeto
 └── README.md               # Esta documentação
-
+```
 ## Metodologia e Tecnologias
 O projeto foi estruturado seguindo as fases do CRISP-DM, utilizando uma abordagem modular e experimental para garantir a reprodutibilidade e a qualidade do modelo final.
 
-## Como Executar o Projeto Localmente
+## Como Executar Localmente
 
 Siga os passos abaixo para configurar e executar o projeto em sua máquina.
 
