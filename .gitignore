@@ -1,2 +1,24 @@
-data/
 .ipynb_checkpoints/
+# Arquivos de Ambiente Virtual
+# Nunca enviar a pasta do ambiente virtual
+venv/
+/venv/
+.venv/
+__pypackages__/
+# Arquivos gerados pelo treinamento
+# Não enviar modelos, scalers, encoders, etc.
+artifacts/
+/artifacts/
+reports/
+/reports/
+# Arquivos de Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Arquivos de configuração de IDEs/Editores
+.vscode/
+.idea/
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
