@@ -5,10 +5,7 @@ venv/
 /venv/
 .venv/
 __pypackages__/
-# Arquivos gerados pelo treinamento
-# Não enviar modelos, scalers, encoders, etc.
-artifacts/
-/artifacts/
+
 reports/
 /reports/
 # Arquivos de Cache do Python

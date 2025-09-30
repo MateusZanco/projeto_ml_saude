@@ -13,7 +13,7 @@ app_file: src/app.py
 ![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
 ![Framework](https://img.shields.io/badge/Streamlit-1.38-red?style=for-the-badge&logo=streamlit)
 ![MLflow](https://img.shields.io/badge/MLflow-2.14-orange?style=for-the-badge)
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow?style=for-the-badge)](URL_DO_SEU_HUGGING_FACE_SPACE_AQUI)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow?style=for-the-badge)](https://huggingface.co/spaces/MateusZanco/previsao-risco-saude)
 
 > [!WARNING]
 > **Este conteúdo é destinado apenas para fins educacionais.** Os dados exibidos são ilustrativos e podem não corresponder a situações reais.
@@ -37,6 +37,7 @@ A solução abrange desde a análise exploratória e pré-processamento dos dado
 
 ## Demonstração Online
 A aplicação está disponível publicamente no Hugging Face Spaces. Acesse e interaja com o modelo final:
+[**Clique aqui para acessar a aplicação**](https://huggingface.co/spaces/MateusZanco/previsao-risco-saude)
 
 ## Arquitetura da Solução
 O projeto foi estruturado de forma modular para garantir a organização, manutenibilidade e reprodutibilidade do código.
