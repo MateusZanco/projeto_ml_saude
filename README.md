@@ -4,7 +4,7 @@ emoji: 🩺
 colorFrom: red 
 colorTo: pink 
 sdk: streamlit 
-python_version: 3.11 
+python_version: 3.13 
 app_file: src/app.py
 ---
 

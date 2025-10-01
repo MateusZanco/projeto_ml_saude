@@ -23,6 +23,14 @@ st.markdown(
 
 st.title("Sistema de Previsão de Risco de Saúde")
 
+st.markdown(
+    """
+    O objetivo desta aplicação é prever o nível de risco de um indivíduo desenvolver uma doença, 
+    classificado em **Baixo, Moderado, Alto e Muito Alto**. A previsão é baseada em um conjunto de dados simulados 
+    contendo informações sobre estilo de vida, hábitos e dados clínicos, utilizando um modelo de Machine Learning.
+    """
+)
+
 st.warning(
     """
     **Atenção:** Este conteúdo é destinado apenas para fins educacionais. 
@@ -38,26 +46,26 @@ with st.sidebar:
     st.header("Dados do Paciente")
 
     with st.expander("Informações Pessoais e Hábitos", expanded=True):
-        idade = st.number_input("Idade", min_value=0, max_value=120, value=45, step=1)
-        sexo = st.radio("Sexo", ["Masculino", "Feminino"], index=0)
-        altura_cm = st.number_input("Altura (cm)", min_value=0, value=175)
-        peso_kg = st.number_input("Peso (kg)", min_value=0.0, value=87.0, format="%.1f")
-        fumante = st.radio("É Fumante?", ["Sim", "Não"], index=1)
-        alcool = st.selectbox("Consumo de Álcool", ["Não consome", "Baixo", "Moderado", "Alto"], index=1)
-        historico = st.radio("Histórico Familiar?", ["Sim", "Não"], index=0)
+        idade = st.number_input("Idade", min_value=18, max_value=89, value=45, step=1, help="Insira a idade do paciente em anos completos.")
+        sexo = st.radio("Sexo", ["Masculino", "Feminino"], index=0, help="Selecione o sexo biológico do paciente.")
+        altura_cm = st.number_input("Altura (cm)", min_value=145, max_value=200, value=175, help="Insira a altura do paciente em centímetros (ex: 175).")
+        peso_kg = st.number_input("Peso (kg)", min_value=40.0, max_value=140.0, value=87.0, format="%.1f", help="Insira o peso do paciente em quilogramas (ex: 87.5).")
+        fumante = st.radio("É Fumante?", ["Sim", "Não"], index=1, help="Marque 'Sim' se o paciente fuma regularmente.")
+        alcool = st.selectbox("Consumo de Álcool", ["Não consome", "Baixo", "Moderado", "Alto"], index=1, help="Indique a frequência de consumo de bebidas alcoólicas.")
+        historico = st.radio("Histórico Familiar?", ["Sim", "Não"], index=0, help="Marque 'Sim' se há casos da doença na família próxima (pais, irmãos).")
 
-    with st.expander("🏃 Estilo de Vida e Rotina"):
-        passos = st.number_input("Média de Passos Diários", min_value=0, value=8000)
-        sono = st.slider("Média de Horas de Sono", 4.0, 12.0, 7.0, 0.5)
-        agua = st.slider("Média de Litros de Água por Dia", 1.0, 5.0, 2.5, 0.5)
-        calorias = st.number_input("Média de Calorias Ingeridas", min_value=0, value=2200)
-        trabalho = st.number_input("Média de Horas de Trabalho por Dia", min_value=0, value=8)
+    with st.expander("Estilo de Vida e Rotina"):
+        passos = st.number_input("Média de Passos Diários", min_value=1000, max_value=20000, value=8000, help="Estimativa da média de passos que o paciente dá por dia.")
+        sono = st.slider("Média de Horas de Sono", 4.0, 12.0, 7.0, 0.5, help="Média de horas de sono por noite.")
+        agua = st.slider("Média de Litros de Água por Dia", 1.0, 5.0, 2.5, 0.5, help="Média de litros de água consumidos por dia.")
+        calorias = st.number_input("Média de Calorias Ingeridas", min_value=1200, max_value=7000, value=2200, help="Estimativa da média de calorias ingeridas diariamente.")
+        trabalho = st.number_input("Média de Horas de Trabalho por Dia", min_value=4, max_value=13, value=8, help="Média de horas dedicadas ao trabalho por dia.")
 
     with st.expander("Dados Clínicos"):
-        fc_repouso = st.number_input("Frequência Cardíaca em Repouso", min_value=0, value=70)
-        colesterol = st.number_input("Nível de Colesterol (mg/dL)", min_value=0, value=210)
-        pa_sistolica = st.number_input("Pressão Arterial Sistólica", min_value=0, value=130)
-        pa_diastolica = st.number_input("Pressão Arterial Diastólica", min_value=0, value=85)
+        fc_repouso = st.number_input("Frequência Cardíaca em Repouso", min_value=50, max_value=100, value=70, help="Batimentos por minuto (BPM) medidos com o paciente em repouso.")
+        colesterol = st.number_input("Nível de Colesterol (mg/dL)", min_value=120, max_value=380, value=210, help="Nível total de colesterol em miligramas por decilitro (mg/dL).")
+        pa_sistolica = st.number_input("Pressão Arterial Sistólica", min_value=90, max_value=180, value=130, help="O valor 'máximo' da medição da pressão arterial (ex: 120 em 120/80).")
+        pa_diastolica = st.number_input("Pressão Arterial Diastólica", min_value=60, max_value=120, value=85, help="O valor 'mínimo' da medição da pressão arterial (ex: 80 em 120/80).")
 
 
 if st.sidebar.button("Analisar Risco", use_container_width=True, type="primary"):
