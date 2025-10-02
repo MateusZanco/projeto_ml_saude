@@ -84,9 +84,9 @@ def train(config_path):
         # Logar pré-processadores como artefatos no MLflow
         joblib.dump(scaler, "scaler.joblib")
         mlflow.log_artifact("scaler.joblib", artifact_path="preprocessors")
-        os.remove("scaler.joblib") # Remove o arquivo temporário
+        os.remove("scaler.joblib")
 
-        # 7. SALVAR ARTEFATOS PARA PRODUÇÃO (Para o Gradio)
+        # 7. SALVAR ARTEFATOS PARA PRODUÇÃO
         save_dir = config['save_dir']
         os.makedirs(save_dir, exist_ok=True)
         print(f"Salvando artefatos para produção em: {save_dir}")
